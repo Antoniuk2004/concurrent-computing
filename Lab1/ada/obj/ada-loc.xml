@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>/home/alex/labs/processes-labs/Lab1/ada/ada.gpr</vfs_project>
+      <vfs_file>/home/alex/labs/processes-labs/Lab1/ada/src/main.adb</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >/home/alex/labs/processes-labs/Lab1/ada/ada.gpr</vfs_file>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project >/home/alex/labs/processes-labs/Lab1/ada/ada.gpr</vfs_project>
+      <vfs_file >/home/alex/labs/processes-labs/Lab1/ada/src/main.adb</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >/home/alex/labs/processes-labs/Lab1/ada.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >/home/alex/labs/processes-labs/Lab1/ada.gpr</vfs_project>
+      <vfs_file >/home/alex/labs/processes-labs/Lab1/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 6">
+      <vfs_project >/home/alex/labs/processes-labs/Lab1/ada.gpr</vfs_project>
+      <vfs_file >/home/alex/labs/processes-labs/Lab1/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/usr/lib/gcc/x86_64-linux-gnu/12/adainclude/a-textio.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 506">
+      <vfs_project  />
+      <vfs_file >/usr/lib/gcc/x86_64-linux-gnu/12/adainclude/a-textio.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>
