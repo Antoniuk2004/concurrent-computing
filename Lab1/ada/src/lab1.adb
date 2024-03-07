@@ -1,35 +1,54 @@
 with Ada.Text_IO; use Ada.Text_IO;
 
 procedure Lab1 is
-   can_be_stopped : Boolean := False;
-   pragma Atomic (can_be_stopped);
 
-   task type Breaker;
-   task body Breaker is
-   begin
-      delay 2.0;
-      can_be_stopped := True;
-   end Breaker;
+   procedure Calculator(Num_of_tasks : Integer) is
+      Can_Be_Stopped : Boolean := False;
+      pragma Atomic (Can_Be_Stopped);
 
-   task type Calculator (Index : Integer);
-   task body Calculator is
-      sum : Long_Long_Integer := 0;
+      task type Break_Task;
+      task body Break_Task is
+      begin
+         delay 2.0;
+         Can_Be_Stopped := True;
+      end Break_Task;
+
+      task type Calc_Task is
+         entry Start (Index : in Integer);
+      end Calc_Task;
+
+      task body Calc_Task is
+         Local_Index : Integer;
+         Sum         : Long_Long_Integer := 0;
+      begin
+         accept Start (Index : in Integer) do
+            Local_Index := Index;
+         end Start;
+
+         Put_Line
+           ("Task" & Integer'Image (Local_Index) & " started calculating..." &
+            Integer'Image (Local_Index));
+         while Can_Be_Stopped = False loop
+            Sum := Sum + 1;
+         end loop;
+         Put_Line
+           ("Task" & Integer'Image (Local_Index) & " Sum:" &
+            Long_Long_Integer'Image (Sum));
+      end Calc_Task;
+
+      b   : Break_Task;
+      type Arra_Of_Tasks is array (Positive range <>) of Calc_Task;
+      Tasks : Arra_Of_Tasks (1 .. Num_of_tasks);
    begin
-      Put_Line ("Task" & Integer'Image (Index) & " started calculating...");
-      while can_be_stopped = False loop
-         sum := sum + 1;
+      for I in 1 .. Num_of_tasks loop
+         Tasks (I).Start (I);
       end loop;
-      Put_Line
-        ("Task" & Integer'Image (Index) & " Sum:" &
-         Long_Long_Integer'Image (sum));
    end Calculator;
 
-   b  : Breaker;
-   c1 : Calculator (1);
-   c2 : Calculator (2);
-   c3 : Calculator (3);
-   c4 : Calculator (4);
+   Number_Of_Tasks : Integer;
 
 begin
-   null;
+   Put ("Enter the number of tasks: ");
+   Number_Of_Tasks := Integer'Value (Get_Line);
+   Calculator (Number_Of_Tasks);
 end Lab1;
