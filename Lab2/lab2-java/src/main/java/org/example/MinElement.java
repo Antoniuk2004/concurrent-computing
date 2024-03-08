@@ -9,6 +9,13 @@ public class MinElement {
         this.index = 0;
     }
 
+    synchronized public void tryToChange(int value, int index) {
+        if (value < this.value) {
+            this.value = value;
+            this.index = index;
+        }
+    }
+
     public int getValue() {
         return value;
     }

@@ -3,44 +3,30 @@ package org.example.managers;
 import org.example.MinValueFinder;
 import org.example.MinElement;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 public class MinValueManager {
     public MinElement findMinWithThreads(int[] arr, int numOfThreads) throws InterruptedException {
-        List<MinValueFinder> minValueFinders = doSearch(arr, numOfThreads);
-        return getMinOfThreadsValues(minValueFinders);
-    }
-
-    private List<MinValueFinder> doSearch(int[] arr, int numOfThreads) throws InterruptedException {
-        List<MinValueFinder> minValueFinders = new ArrayList<>();
+        MinElement minElement = new MinElement();
         CountDownLatch latch = new CountDownLatch(numOfThreads);
+
+        int oneThreadRange = (arr.length / numOfThreads);
+
         for (int i = 0; i < numOfThreads; i++) {
             MinValueFinderParams params = new MinValueFinderParams();
             params.setArr(arr);
             params.setIndex(i);
             params.setNumOfThreads(numOfThreads);
             params.setLatch(latch);
+            params.setMinElement(minElement);
+            params.setOneThreadRange(oneThreadRange);
 
-            MinValueFinder calc = new MinValueFinder(params);
-            minValueFinders.add(calc);
+            new MinValueFinder(params);
         }
         latch.await();
-        return minValueFinders;
+        return minElement;
     }
-
-    public MinElement getMinOfThreadsValues(List<MinValueFinder> minValueFinders) {
-        MinElement globalMinElement = new MinElement();
-        for (MinValueFinder minValueFinder : minValueFinders) {
-            MinElement threadMin = minValueFinder.getMin();
-            if (threadMin.getValue() < globalMinElement.getValue()) {
-                globalMinElement = threadMin;
-            }
-        }
-        return globalMinElement;
-    }
-
 
     public MinElement findMinValueWithOneLoop(int[] arr) {
         MinElement minElement = new MinElement();

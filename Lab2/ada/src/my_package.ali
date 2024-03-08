@@ -1,0 +1,18 @@
+V "GNAT Lib v12"
+P ZX
+
+RN
+
+U my_package%b		my_package.adb		6d0fc7b2 NE OO PK
+
+U my_package%s		my_package.ads		70798119 EE NE OO PK
+
+D my_package.ads	20240308125413 70798119 my_package%s
+D my_package.adb	20240308125433 1d7646ab my_package%b
+D system.ads		20230508121439 a2da961d system%s
+G a e
+G c Z s b [get_value my_package 5 13 none]
+X 1 my_package.ads
+1K9*My_Package 8l5 8e15 2|1b14 8l5 8t15
+5V13*Get_Value{integer} 2|3b13 6l8 6t17
+
