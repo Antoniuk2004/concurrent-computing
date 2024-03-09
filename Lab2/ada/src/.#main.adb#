@@ -1,0 +1,25 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with My_Package;
+with Array_Package;
+
+procedure Main is
+
+   Num_Of_Threads : Integer;
+   Min            : Integer;
+   Arr            : Array_Package.Array_Of_Integers (1 .. 10);
+begin
+   Arr := Array_Package.Initialize_Array (10);
+
+   for I in Arr'Range loop
+      Put (Integer'Image (Arr (I)) & " ");
+   end loop;
+   Put_Line ("");
+
+   Num_Of_Threads := 10;
+
+   --  Put ("Input the number of threads: ");
+   --  Num_Of_Threads := Integer'Value (Get_Line);
+   Min := My_Package.Find_Min (Num_Of_Threads, Arr);
+   Put_Line ("Min" & Integer'Image (Min));
+
+end Main;

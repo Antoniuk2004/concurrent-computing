@@ -1,0 +1,132 @@
+V "GNAT Lib v12"
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_TASKING
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_ELABORATION_CODE
+RV MAX_TASK_ENTRIES=1
+RV MAX_ENTRY_QUEUE_LENGTH=1+
+
+U find_min_task_package%b  find_min_task_package.adb  3bfc59c4 OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system%s		system.ads		system.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
+Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+U find_min_task_package%s  find_min_task_package.ads  de9f9e52 EE NE OO PK
+Z ada.real_time%s	a-reatim.adb		a-reatim.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W array_package%s	array_package.adb	array_package.ali
+W min_element_package%s	min_element_package.adb	min_element_package.ali
+W min_find_manager%s	min_find_manager.adb	min_find_manager.ali
+Z system%s		system.ads		system.ali
+Z system.parameters%s	s-parame.adb		s-parame.ali
+Z system.task_info%s	s-tasinf.adb		s-tasinf.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+D ada.ads		20230508121439 76789da1 ada%s
+D a-except.ads		20230508121439 2a7d8d70 ada.exceptions%s
+D a-finali.ads		20230508121439 bf4f806b ada.finalization%s
+D a-ioexce.ads		20230508121439 40018c65 ada.io_exceptions%s
+D a-reatim.ads		20230508121439 0240fc73 ada.real_time%s
+D a-stream.ads		20230508121439 119b8fb3 ada.streams%s
+D a-string.ads		20230508121439 90ac6797 ada.strings%s
+D a-sttebu.ads		20230508121439 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20230508121439 33c54060 ada.strings.utf_encoding%s
+D a-tags.ads		20230508121439 9eaa38c6 ada.tags%s
+D a-textio.ads		20230508121439 deada98a ada.text_io%s
+D a-unccon.ads		20230508121439 0e9b276f ada.unchecked_conversion%s
+D array_package.ads	20240308174757 e913b976 array_package%s
+D find_min_task_package.ads  20240309092057 0d733924 find_min_task_package%s
+D find_min_task_package.adb  20240309092053 e822c96a find_min_task_package%b
+D interfac.ads		20230508121439 edec285f interfaces%s
+D i-c.ads		20230508121439 2284bf7c interfaces.c%s
+D i-cstrea.ads		20230508121439 e53d8b8e interfaces.c_streams%s
+D min_element_package.ads  20240309085933 96e7b925 min_element_package%s
+D min_find_manager.ads	20240309090943 ac18a725 min_find_manager%s
+D system.ads		20230508121439 a2da961d system%s
+D s-atacco.ads		20230508121439 4c36d12f system.address_to_access_conversions%s
+D s-crtl.ads		20230508121439 8a0692f8 system.crtl%s
+D s-exctab.ads		20230508121439 91bef6ef system.exception_table%s
+D s-ficobl.ads		20230508121439 dc5161d4 system.file_control_block%s
+D s-finroo.ads		20230508121439 4ff27390 system.finalization_root%s
+D s-linux.ads		20230508121439 34850a8c system.linux%s
+D s-multip.ads		20230508121439 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20230513073325 89271e13 system.os_constants%s
+D s-osinte.ads		20230508121439 e4f53740 system.os_interface%s
+D s-parame.ads		20230508121439 d494a4a6 system.parameters%s
+D s-putima.ads		20230508121439 4e095881 system.put_images%s
+D s-secsta.ads		20230508121439 62cd9202 system.secondary_stack%s
+D s-soflin.ads		20230508121439 df77073e system.soft_links%s
+D s-stache.ads		20230508121439 0b81c1fe system.stack_checking%s
+D s-stausa.ads		20230508121439 5be75682 system.stack_usage%s
+D s-stalib.ads		20230508121439 1c9580f6 system.standard_library%s
+D s-stoele.ads		20230508121439 6d8e1ff4 system.storage_elements%s
+D s-stoele.adb		20230508121439 8f5a9db6 system.storage_elements%b
+D s-tasinf.ads		20230508121439 528dde74 system.task_info%s
+D s-taspri.ads		20230508121439 4ec891e7 system.task_primitives%s
+D s-taprop.ads		20230508121439 6eefbe12 system.task_primitives.operations%s
+D s-taskin.ads		20230508121439 0ec7ab0b system.tasking%s
+D s-taprob.ads		20230508121439 acd6094d system.tasking.protected_objects%s
+D s-tpoben.ads		20230508121439 60ad3dae system.tasking.protected_objects.entries%s
+D s-tasren.ads		20230508121439 a67a9949 system.tasking.rendezvous%s
+D s-tassta.ads		20230508121439 cca55c94 system.tasking.stages%s
+D s-traent.ads		20230508121439 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20230508121439 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		20230508121439 d9032363 system.wch_con%s
+D unchconv.ads		20230508121439 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z s b [find_min_task find_min_task_package 6 15 none]
+G c Z s b [start find_min_task_package__find_min_task 7 15 none]
+G c Z s s [P5sIP find_min_task_package 7 9 none]
+G c Z s s [find_min_taskVIP find_min_task_package 6 5 none]
+G r c none [start find_min_task_package__find_min_task 7 15 none] [get_min_value min_element_package 5 13 none]
+G r p none [start find_min_task_package__find_min_task 7 15 none] [set_min min_find_manager__min_manager 5 19 none]
+G r p none [start find_min_task_package__find_min_task 7 15 none] [increment min_find_manager__min_manager 6 19 none]
+G r c none [find_min_task find_min_task_package 6 15 none] [get_min_value min_element_package 5 13 none]
+G r p none [find_min_task find_min_task_package 6 15 none] [set_min min_find_manager__min_manager 5 19 none]
+G r p none [find_min_task find_min_task_package 6 15 none] [increment min_find_manager__min_manager 6 19 none]
+X 1 ada.ads
+16K9*Ada 20e8 15|1r6 1r31
+X 11 a-textio.ads
+58K13*Text_IO 727e16 15|1w10 1r35
+X 13 array_package.ads
+1K9*Array_Package 6e18 14|1w6 8r43 15|8r43
+2A9*Array_Of_Integers(integer)<integer> 14|8r57 15|8r57
+X 14 find_min_task_package.ads
+5K9*Find_Min_Task_Package 11l5 11e26 15|3b14 19l5 19t26
+6T15*Find_Min_Task 10l9 10e22 15|4b15 18l9 18t22
+7Y15 Start 8>13 9>13 9>26 9=52 15|7b16 17l13 17t18
+8a13 Arr{13|2A9} 15|12r20 13r42
+9i13 Lower_Bound{integer} 15|11r22
+9i26 Upper_Bound{integer} 15|11r37
+9r52 M{19|2R9} 15|12r45 13m51 13r51
+X 15 find_min_task_package.adb
+5i9 Min{integer}
+8a13 Arr{13|2A9}
+9i13 Lower_Bound{integer}
+9i26 Upper_Bound{integer}
+9r52 M{19|2R9}
+11i17 I{integer} 12r25 13r47
+X 19 min_element_package.ads
+1K9*Min_Element_Package 14|3w6 3r31 19|13e24
+2R9*Min_Element 14|9r63 15|9r63 19|11e14
+5V13*Get_Min_Value{integer} 15|12s30
+X 20 min_find_manager.ads
+3K9*Min_Find_Manager 14|2w6 2r28 20|14e21
+4w15*Min_Manager 15|13r21 16r13
+5U19 Set_Min 15|13s33
+6U19 Increment 15|16s25
+X 36 s-stausa.ads
+207U14*Initialize 208i<c,__gnat_stack_usage_initialize>22
+272U14*Output_Results 276i<c,__gnat_stack_usage_output_results>22
+

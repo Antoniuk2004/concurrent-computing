@@ -2,17 +2,28 @@ V "GNAT Lib v12"
 P ZX
 
 RN
+RV NO_DYNAMIC_SIZED_OBJECTS
 
-U my_package%b		my_package.adb		6d0fc7b2 NE OO PK
+U my_package%b		my_package.adb		cf387a25 NE OO PK
 
-U my_package%s		my_package.ads		70798119 EE NE OO PK
+U my_package%s		my_package.ads		79838312 EE NE OO PK
+W array_package%s	array_package.adb	array_package.ali
 
-D my_package.ads	20240308125413 70798119 my_package%s
-D my_package.adb	20240308125433 1d7646ab my_package%b
+D array_package.ads	20240308174757 e913b976 array_package%s
+D my_package.ads	20240308175014 90903a64 my_package%s
+D my_package.adb	20240308200218 5fa84041 my_package%b
 D system.ads		20230508121439 a2da961d system%s
 G a e
-G c Z s b [get_value my_package 5 13 none]
-X 1 my_package.ads
-1K9*My_Package 8l5 8e15 2|1b14 8l5 8t15
-5V13*Get_Value{integer} 2|3b13 6l8 6t17
+G c Z s b [find_min my_package 4 13 none]
+X 1 array_package.ads
+1K9*Array_Package 6e18 2|1w6 5r39 3|4r39
+2A9*Array_Of_Integers(integer)<integer> 2|5r53 3|4r53
+X 2 my_package.ads
+3K9*My_Package 6l5 6e15 3|1b14 19l5 19t15
+4V13*Find_Min{integer} 5>7 5>33 3|3b13 17l8 17t16
+5i7 Num_Of_Threads{integer} 3|4b7
+5a33 Arr{1|2A9} 3|4b33 10r16 11r13 12r26
+X 3 my_package.adb
+7i7 Min_Value{integer} 11r23 12m13 16r14
+10i11 I{integer} 11r18 12r31
 
