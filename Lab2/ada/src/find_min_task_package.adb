@@ -10,7 +10,7 @@ package body Find_Min_Task_Package is
         do
             for I in Lower_Bound .. Upper_Bound loop
                 if Arr (I) < Get_Min_Value (M) then
-                    Min_Manager.Set_Min (arr (I), M);
+                    Min_Manager.Set_Min (arr (I), M, I);
                 end if;
             end loop;
             Min_Manager.Increment;

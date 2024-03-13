@@ -1,41 +1,49 @@
 V "GNAT Lib v12"
 M P W=b
-P ZX
+P SS ZX
 
 RN
 RV NO_DELAY
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
 RV NO_FIXED_POINT
 RV NO_IO
 RV NO_LONG_LONG_INTEGERS
 RV NO_RELATIVE_DELAY
+RV NO_SECONDARY_STACK
 RV NO_STANDARD_STORAGE_POOLS
 RV NO_TASK_HIERARCHY
 RV NO_TASKING
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLICIT_LOOPS
+RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U lab1%b		lab1.adb		c8d04cb8 NE OO SU
+U lab1%b		lab1.adb		a94861f4 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z system%s		system.ads		system.ali
-Z system.concat_3%s	s-conca3.adb		s-conca3.ali
 Z system.concat_4%s	s-conca4.adb		s-conca4.ali
 Z system.img_int%s	s-imgint.ads		s-imgint.ali
 Z system.img_lli%s	s-imglli.ads		s-imglli.ali
 Z system.parameters%s	s-parame.adb		s-parame.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.task_info%s	s-tasinf.adb		s-tasinf.ali
 Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
 Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+Z system.val_int%s	s-valint.ads		s-valint.ali
 
 D ada.ads		20230508121439 76789da1 ada%s
 D a-calend.ads		20230508121439 f55c50a3 ada.calendar%s
 D a-caldel.ads		20230508121439 9f20b83d ada.calendar.delays%s
 D a-except.ads		20230508121439 2a7d8d70 ada.exceptions%s
+D a-finali.ads		20230508121439 bf4f806b ada.finalization%s
 D a-ioexce.ads		20230508121439 40018c65 ada.io_exceptions%s
 D a-reatim.ads		20230508121439 0240fc73 ada.real_time%s
 D a-stream.ads		20230508121439 119b8fb3 ada.streams%s
@@ -48,14 +56,15 @@ D a-unccon.ads		20230508121439 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20230508121439 edec285f interfaces%s
 D i-c.ads		20230508121439 2284bf7c interfaces.c%s
 D i-cstrea.ads		20230508121439 e53d8b8e interfaces.c_streams%s
-D lab1.adb		20240306150939 167de532 lab1%b
+D lab1.adb		20240307133247 77e5c87e lab1%b
 D system.ads		20230508121439 a2da961d system%s
 D s-atacco.ads		20230508121439 4c36d12f system.address_to_access_conversions%s
-D s-conca3.ads		20230508121439 9078e860 system.concat_3%s
+D s-casuti.ads		20230508121439 cf13d755 system.case_util%s
 D s-conca4.ads		20230508121439 d29d9dac system.concat_4%s
 D s-crtl.ads		20230508121439 8a0692f8 system.crtl%s
 D s-exctab.ads		20230508121439 91bef6ef system.exception_table%s
 D s-ficobl.ads		20230508121439 dc5161d4 system.file_control_block%s
+D s-finroo.ads		20230508121439 4ff27390 system.finalization_root%s
 D s-imagei.ads		20230508121439 0d3f86a7 system.image_i%s
 D s-imgint.ads		20230508121439 bdb6f5ec system.img_int%s
 D s-imglli.ads		20230508121439 3723d9ff system.img_lli%s
@@ -76,31 +85,46 @@ D s-tasinf.ads		20230508121439 528dde74 system.task_info%s
 D s-taspri.ads		20230508121439 4ec891e7 system.task_primitives%s
 D s-taprop.ads		20230508121439 6eefbe12 system.task_primitives.operations%s
 D s-taskin.ads		20230508121439 0ec7ab0b system.tasking%s
+D s-taprob.ads		20230508121439 acd6094d system.tasking.protected_objects%s
+D s-tpoben.ads		20230508121439 60ad3dae system.tasking.protected_objects.entries%s
+D s-tasren.ads		20230508121439 a67a9949 system.tasking.rendezvous%s
 D s-tassta.ads		20230508121439 cca55c94 system.tasking.stages%s
 D s-traent.ads		20230508121439 c81cbf8c system.traceback_entries%s
 D s-unstyp.ads		20230508121439 fa2a7f59 system.unsigned_types%s
+D s-valint.ads		20230508121439 85ddbf9c system.val_int%s
+D s-valuns.ads		20230508121439 e8a1f424 system.val_uns%s
+D s-valuti.ads		20230508121439 4d0d41f3 system.val_util%s
+D s-valuei.ads		20230508121439 75953b98 system.value_i%s
+D s-valueu.ads		20230508121439 eb2f4477 system.value_u%s
 D s-wchcon.ads		20230508121439 d9032363 system.wch_con%s
 D unchconv.ads		20230508121439 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [lab1 standard 3 11 none]
 X 1 ada.ads
-16K9*Ada 20e8 17|1r6 1r23
-X 12 a-textio.ads
-58K13*Text_IO 727e16 17|1w10 1r27
-507U14*Put_Line 17|18s7 22s7
-X 17 lab1.adb
-3U11*Lab1 3b11 35l5 35t9
-4b4 can_be_stopped{boolean} 5r19 11m7 19r13
-7T14 Breaker 8b14 12l8 12t15 27r9
-14T14 Calculator 14d26 15b14 25l8 25t18 28r9 29r9 30r9 31r9
-14i26 Index{integer} 18r41 23r34
-16i7 sum{long_long_integer} 20m10 20r17 24r35
-27t4 b{7T14}
-28t4 c1{14T14}
-29t4 c2{14T14}
-30t4 c3{14T14}
-31t4 c4{14T14}
-X 37 s-stausa.ads
+16K9*Ada 20e8 18|1r6 1r23
+X 13 a-textio.ads
+58K13*Text_IO 727e16 18|1w10 1r27
+464U14*Put 18|51s4
+494V13*Get_Line{string} 18|52s38
+507U14*Put_Line 18|28s10 34s10
+X 18 lab1.adb
+3U11*Lab1 3b11 54l5 54t9
+5U14 Calculator 5b14 5>25 46l8 46t18 53s4
+5i25 Num_of_tasks{integer} 41r35 43r21
+6b7 Can_Be_Stopped{boolean} 7r22 13m10 31r16
+9T17 Break_Task 10b17 14l11 14t21 39r13
+16T17 Calc_Task 18l11 18e20 20b17 37l11 37t20 40r58
+17Y16 Start 17>23 24b17 26l14 26t19 44s20
+17i23 Index{integer} 25r28
+21i10 Local_Index{integer} 25m13 29r37 30r28 35r37
+22i10 Sum{long_long_integer} 32m13 32r20 36r38
+24i24 Index{integer}
+39t7 b{9T17}
+40A12 Arra_Of_Tasks(16T17)<integer> 41r15
+41a7 Tasks{40A12} 44r10
+43i11 I{integer} 44r17 44r27
+48i4 Number_Of_Tasks{integer} 52m4 53r16
+X 39 s-stausa.ads
 207U14*Initialize 208i<c,__gnat_stack_usage_initialize>22
 272U14*Output_Results 276i<c,__gnat_stack_usage_output_results>22
 

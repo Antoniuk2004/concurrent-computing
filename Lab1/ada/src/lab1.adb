@@ -2,7 +2,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 
 procedure Lab1 is
 
-   procedure Calculator(Num_of_tasks : Integer) is
+   procedure Calculator (Num_of_tasks : Integer) is
       Can_Be_Stopped : Boolean := False;
       pragma Atomic (Can_Be_Stopped);
 
@@ -36,7 +36,7 @@ procedure Lab1 is
             Long_Long_Integer'Image (Sum));
       end Calc_Task;
 
-      b   : Break_Task;
+      b : Break_Task;
       type Arra_Of_Tasks is array (Positive range <>) of Calc_Task;
       Tasks : Arra_Of_Tasks (1 .. Num_of_tasks);
    begin
