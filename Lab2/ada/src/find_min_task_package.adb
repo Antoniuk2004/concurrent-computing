@@ -2,7 +2,6 @@ with Ada.Text_IO;         use Ada.Text_IO;
 
 package body Find_Min_Task_Package is
     task body Find_Min_Task is
-        Min : Integer := Integer'Last;
     begin
         accept Start
            (Arr                      : in Array_Package.Array_Of_Integers;

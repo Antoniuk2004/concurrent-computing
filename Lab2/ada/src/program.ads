@@ -8,6 +8,7 @@ with Ada.Calendar;            use Ada.Calendar;
 with Ada.Calendar.Formatting; use Ada.Calendar.Formatting;
 
 package Program is
-    procedure Do_Computing
+    procedure Compute_With_Tasks
        (Num_Of_Tasks : Integer; Arr : Array_Package.Array_Of_Integers);
+    procedure Compute_Without_Tasks (Arr : Array_Package.Array_Of_Integers);
 end Program;

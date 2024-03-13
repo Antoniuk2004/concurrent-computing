@@ -1,4 +1,3 @@
--- Min_Element_Package.adb (Package Body)
 package body Min_Element_Package is
     procedure Initialize_Element (Element : in out Min_Element) is
     begin
@@ -17,9 +16,8 @@ package body Min_Element_Package is
     end Get_Index;
 
     procedure Set_Min_Value (Element : in out Min_Element; Min_V : Integer; Index_Of_Arr: Integer) is
-    begin
+    begin   
         Element.Min_Value := Min_V;
         Element.Index := Index_Of_Arr;
     end Set_Min_Value;
-
 end Min_Element_Package;

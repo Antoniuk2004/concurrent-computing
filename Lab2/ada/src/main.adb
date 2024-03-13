@@ -13,5 +13,6 @@ begin
 
    Arr := Array_Package.Initialize_Array (Num_Of_Arr_Elements);
 
-   Do_Computing (Num_Of_Tasks, Arr);
+   Compute_With_Tasks(Num_Of_Tasks, Arr);
+   Compute_Without_Tasks(Arr);
 end Main;
