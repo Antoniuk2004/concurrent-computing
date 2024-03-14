@@ -1,7 +1,5 @@
-with Array_Package;
+with Array_Package; use Array_Package;
 
 package One_Thread_Computing is
-   procedure Find_Min
-     (Arr : Array_Package.Array_Of_Integers;
-      Min_Value      : out Integer; Index : out Integer);
+  procedure Find_Min (Min_Value : in out Integer; Index : in out Integer);
 end One_Thread_Computing;

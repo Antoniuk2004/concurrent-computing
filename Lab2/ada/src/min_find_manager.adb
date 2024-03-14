@@ -1,7 +1,7 @@
 package body Min_Find_Manager is
     protected body Min_Manager is
         procedure Set_Min
-           (Value : in Integer; M : in out Min_Element; Index : in Integer)
+           (Value : in out Integer; M : in out Min_Element; Index : in Integer)
         is
         begin
             Set_Min_Value (M, Value, Index);
@@ -12,7 +12,7 @@ package body Min_Find_Manager is
             Tasks_Count := Tasks_Count + 1;
         end Increment;
 
-        procedure Set_Num_Of_Tasks (N : in Integer) is
+        procedure Set_Num_Of_Tasks (N : in out Integer) is
         begin
             Num_Of_Tasks := N;
         end Set_Num_Of_Tasks;

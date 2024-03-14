@@ -1,7 +1,5 @@
 package body Program is
-    procedure Compute_With_Tasks
-       (Num_Of_Tasks : Integer; Arr : Array_Package.Array_Of_Integers)
-    is
+    procedure Compute_With_Tasks (Num_Of_Tasks : in out Integer) is
         Start_Time, Stop_Time : Time;
         Elapsed_Time          : Duration;
 
@@ -30,7 +28,7 @@ package body Program is
                 Upper_Bound := Lower_Bound + One_Task_Range;
             end if;
 
-            tasks (I).Start (Arr, Lower_Bound, Upper_Bound, M);
+            tasks (I).Start (Lower_Bound, Upper_Bound, M);
         end loop;
 
         Min_Manager.Get_Min;
@@ -41,14 +39,14 @@ package body Program is
         Put_Line ("Index: " & Integer'Image (Get_Index (M)));
     end Compute_With_Tasks;
 
-    procedure Compute_Without_Tasks (Arr : Array_Package.Array_Of_Integers) is
+    procedure Compute_Without_Tasks is
         Start_Time, Stop_Time : Time;
         Elapsed_Time          : Duration;
 
         Min_Value, Min_Value_Index : Integer;
     begin
         Start_Time := Clock;
-        Find_Min (Arr, Min_Value, Min_Value_Index);
+        Find_Min (Min_Value, Min_Value_Index);
         Stop_Time    := Clock;
         Elapsed_Time := Stop_Time - Start_Time;
         Put_Line ("");
