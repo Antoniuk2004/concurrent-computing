@@ -4,9 +4,9 @@ public class Producer extends Thread{
     private final Storage storage;
     private final int numberOfProducts;
 
-    public Producer(Storage storage, int numberOfItems) {
+    public Producer(Storage storage, int numberOfProducts) {
         this.storage = storage;
-        this.numberOfProducts = numberOfItems;
+        this.numberOfProducts = numberOfProducts;
         start();
     }
 
