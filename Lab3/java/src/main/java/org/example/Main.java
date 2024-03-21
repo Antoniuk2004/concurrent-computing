@@ -10,7 +10,9 @@ public class Main {
         int numberOfProducts = new Scanner(System.in).nextInt();
 
         Storage storage = new Storage(capacity);
-        new Producer(storage, numberOfProducts);
-        new Consumer(storage, numberOfProducts);
+        for (int i = 0; i < numberOfProducts; i++) {
+            new Producer(storage, i);
+            new Consumer(storage);
+        }
     }
 }

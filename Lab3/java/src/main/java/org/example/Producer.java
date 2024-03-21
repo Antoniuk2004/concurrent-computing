@@ -1,29 +1,27 @@
 package org.example;
 
-public class Producer extends Thread{
+public class Producer extends Thread {
     private final Storage storage;
-    private final int numberOfProducts;
+    private final int id;
 
-    public Producer(Storage storage, int numberOfProducts) {
+    public Producer(Storage storage, int id) {
         this.storage = storage;
-        this.numberOfProducts = numberOfProducts;
+        this.id = id;
         start();
     }
 
-    public void run(){
-        for(int i = 0; i < numberOfProducts; i++){
-            try {
-                storage.getFullSemaphore().acquire();
-                storage.getAccessSemaphore().acquire();
+    public void run() {
+        try {
+            storage.getFullSemaphore().acquire();
+            storage.getAccessSemaphore().acquire();
 
-                storage.addElement(new Product(i));
-                System.out.printf("Product with id %d was added%n", i);
+            storage.addElement(new Product(id));
+            System.out.printf("Product with id %d was added%n", id);
 
-                storage.getAccessSemaphore().release();
-                storage.getEmptySemaphore().release();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            storage.getAccessSemaphore().release();
+            storage.getEmptySemaphore().release();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -41,13 +41,16 @@ procedure Main is
             Philisopher_Task.Left_Fork_Id  := Left_Fork_Id;
          end Start;
 
-         Put_Line ("Philosopher with id" & Integer'Image (Id) & " is thinking.");
+         Put_Line
+           ("Philosopher with id" & Integer'Image (Id) & " is thinking.");
          Forks (Format_Index (Right_Fork_Id)).Seize;
          Forks (Format_Index (Left_Fork_Id)).Seize;
-         Put_Line ("Philosopher with id" & Integer'Image (Id) & " started eating.");
+         Put_Line
+           ("Philosopher with id" & Integer'Image (Id) & " started eating.");
          Forks (Format_Index (Right_Fork_Id)).Release;
          Forks (Format_Index (Left_Fork_Id)).Release;
-         Put_Line ("Philosopher with id" & Integer'Image (Id) & " finished eating.");
+         Put_Line
+           ("Philosopher with id" & Integer'Image (Id) & " finished eating.");
       end Philisopher_Task;
 
       type Arr_Of_Philisophers is
