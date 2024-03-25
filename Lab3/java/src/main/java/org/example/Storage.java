@@ -11,7 +11,8 @@ public class Storage {
     private final Semaphore full;
     private final Semaphore empty;
 
-    public Storage(int capacity) {
+
+    public Storage(int capacity, int numberOfProducts) {
         this.access = new Semaphore(1);
         this.full = new Semaphore(capacity);
         this.empty = new Semaphore(0);
