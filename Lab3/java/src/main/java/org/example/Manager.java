@@ -7,11 +7,15 @@ public class Manager {
     private final int productsPerConsumer;
     private int remainingProductsConsumer;
 
-    private int totalProducers;
-    private int totalConsumers;
+    private int reamingProducers;
+    private int reamingConsumers;
 
-    private final boolean producersBool;
-    private final boolean consumersBool;
+    private final boolean isNumOfProducersMoreThanNumOfProducts;
+    private final boolean isNumOfConsumersMoreThanNumOfProducts;
+
+    private final int extraProductsForProducers;
+    private final int extraProductsForConsumers;
+
 
     public Manager(int numberOfProducts, int numberOfProducers, int numberOfConsumers) {
         this.productsPerProducer = numberOfProducts / numberOfProducers;
@@ -20,50 +24,51 @@ public class Manager {
         this.productsPerConsumer = numberOfProducts / numberOfConsumers;
         this.remainingProductsConsumer = numberOfProducts % numberOfConsumers;
 
-        producersBool = numberOfProducers <= numberOfProducts;
-        consumersBool = numberOfConsumers <= numberOfProducts;
+        this.isNumOfProducersMoreThanNumOfProducts = numberOfProducers <= numberOfProducts;
+        this.isNumOfConsumersMoreThanNumOfProducts = numberOfConsumers <= numberOfProducts;
 
-        this.totalProducers = numberOfProducers;
-        this.totalConsumers = numberOfConsumers;
+        this.reamingProducers = numberOfProducers;
+        this.reamingConsumers = numberOfConsumers;
+
+        this.extraProductsForProducers = numberOfProducts - numberOfProducers * productsPerProducer;
+        this.extraProductsForConsumers = numberOfProducts - numberOfConsumers * productsPerConsumer;
     }
 
-    public int calcNumOfProductsToProduce() {
-        if (totalProducers <= 0) return 0;
+    public int calcNumOfProductsToProduce(int step) {
+        if (reamingProducers <= 0) return 0;
 
-        int productsToProduce = productsPerProducer;
-        if (producersBool) {
-            totalProducers--;
-            return productsToProduce;
+        reamingProducers--;
+        if (isNumOfProducersMoreThanNumOfProducts) {
+            if (step < extraProductsForProducers) return productsPerProducer + 1;
+            else return productsPerProducer;
         }
 
         if (remainingProductsProducer > 0) {
-            productsToProduce++;
             remainingProductsProducer--;
+            return productsPerProducer + 1;
         }
-        totalProducers--;
 
-        return productsToProduce;
+        return productsPerProducer;
     }
 
-    public int calcNumOfProductsToConsume() {
-        if (totalConsumers <= 0) return 0;
+    public int calcNumOfProductsToConsume(int step) {
+        if (reamingConsumers <= 0) return 0;
 
-        int productsToConsume = productsPerConsumer;
-        if (consumersBool) {
-            totalConsumers--;
-            return productsToConsume;
+        reamingConsumers--;
+        if (isNumOfConsumersMoreThanNumOfProducts) {
+            if (step < extraProductsForConsumers) return productsPerConsumer + 1;
+            else return productsPerConsumer;
         }
 
         if (remainingProductsConsumer > 0) {
-            productsToConsume++;
             remainingProductsConsumer--;
+            return productsPerConsumer + 1;
         }
-        totalConsumers--;
 
-        return productsToConsume;
+        return productsPerConsumer;
     }
 
     public boolean checkIfDone() {
-        return totalProducers > 0 || totalConsumers > 0;
+        return reamingProducers > 0 || reamingConsumers > 0;
     }
 }

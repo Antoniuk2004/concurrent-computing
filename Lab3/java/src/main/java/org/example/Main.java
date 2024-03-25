@@ -15,19 +15,16 @@ public class Main {
 
         int capacity = 3;
         int numberOfProducts = 10;
-        int numberOfProducers = 3;
-        int numberOfConsumers = 3;
+        int numberOfProducers = 123;
+        int numberOfConsumers = 34;
 
         Storage storage = new Storage(capacity, numberOfProducts);
         Manager manager = new Manager(numberOfProducts, numberOfProducers, numberOfConsumers);
 
         int step = 0;
         while (manager.checkIfDone()) {
-            int productsToProduce = manager.calcNumOfProductsToProduce();
-            if(productsToProduce != 0) new Producer(storage, step, productsToProduce);
-
-            int productsToConsume = manager.calcNumOfProductsToConsume();
-            if(productsToConsume != 0) new Consumer(storage, step, productsToConsume);
+            new Producer(storage, step, manager);
+            new Consumer(storage, step, manager);
 
             step++;
         }

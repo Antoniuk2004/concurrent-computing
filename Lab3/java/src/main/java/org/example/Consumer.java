@@ -5,12 +5,12 @@ public class Consumer extends Thread {
     private final int id;
     private final int numOfIterations;
 
-    public Consumer(Storage storage, int id, int numOfIterations) {
+    public Consumer(Storage storage, int step, Manager manager) {
         this.storage = storage;
-        this.id = id;
-        this.numOfIterations = numOfIterations;
+        this.id = step;
 
-        start();
+        numOfIterations = manager.calcNumOfProductsToConsume(step);
+        if (numOfIterations > 0) start();
     }
 
     public void run() {
