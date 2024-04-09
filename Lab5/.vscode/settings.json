@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "ctime": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
+}
